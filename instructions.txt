@@ -39,16 +39,9 @@ I am unable to comprehend it. Do not hesitate to use those libraries if you wish
 (venv folder) given with the sample.
 
 Example:
-- configue db in config.env
-- run "python manage.py recreate_db"
-- run "python manage.py setup_dev"
-- then "python manage.py runserver" to run app
-- got to '/what_admin/' to login
-- Login
-ADMIN_EMAIL=jj@gmail.com
-ADMIN_PASSWORD=password
-
-'/admin/users' and '/admin/new-user' 
+The Examples folder did not properly get pushed. 
+The example code is a modified version of https://github.com/hack4impact/flask-base (Flask-Base). 
+See Admin, Account, and Main folders to show how roles are done. It is similar to flask-security style.
 
 Sample:
 This is somewhat the format I am looking for. You can use whatever structure is best.
