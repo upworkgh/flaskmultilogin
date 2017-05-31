@@ -1,0 +1,59 @@
+Flask Login System
+
+Qualifications:
+-know rudimentary HTML and jinja2 templating
+-python 3.5+ (3.5.4)
+-Flask Framework
+-Flask SQLalchem
+
+Create a Multi-User Login system:
+1) Master
+-master system is where the creation, deletion and updates can be made in regards to the webaccount
+2) Web Account
+-basic account system
+-cannot be deleted when logged in
+
+Create a system in which it can create an account based on email, password(hashed), Language, and number of "webaccounts" (1, 2, 3). This account will be the "Master Account".
+When logged in the Master Account:
+-it can create multiple accounts based on the number of "webaccounts" chosen when creating the Master Account
+-the Web account must be created only when logged in the Master Account
+-Web accounts creation must consist of email, password(hashed), and a chosen language
+-Deletion of web account can only be done if logged in Master Account.
+-Deletion of Master Account can only be done if logged in to Master Account
+
+When logged in the Web Accounts:
+-you will be provided a login form, html, and url mapping for the login function that when logged in redirects to web account's home page. 
+-web accounts must have a @login_required decorator working when someone is logged into the web account  
+
+You will be provided:
+-a sample code of type of login system style
+-the front end template to the login system
+
+Additional Notes:
+-You are free to use any python library, The code sample only uses flask-login's "current_user" and "login_required" module.
+I believe this can be done using flask-security or flask-user libraries "Role" function but due to my rudimentary python knowledge, 
+I am unable to comprehend it. Do not hesitate to use those libraries if you wish.
+-Be sure to code in the standard that is used in flask-security: https://pythonhosted.org/Flask-Security/quickstart.html#id1
+-You are also free to use any database you feel comfortable with, I used postgresql.
+-flask-sqlalchemy did not update for python 3+ the flask sqlalchemy I used was from miguel grinberg blog. It will be available in the virtualenv
+(venv folder) given with the sample.
+
+Example:
+- configue db in config.env
+- run "python manage.py recreate_db"
+- run "python manage.py setup_dev"
+- then "python manage.py runserver" to run app
+- got to '/what_admin/' to login
+- Login
+ADMIN_EMAIL=jj@gmail.com
+ADMIN_PASSWORD=password
+
+'/admin/users' and '/admin/new-user' 
+
+Sample:
+This is somewhat the format I am looking for. You can use whatever structure is best.
+The master urls always start with "/master" e.g. "127.0.0.1:5000/master/login" same for webaccount
+
+What I have tried:
+Two flask login systems in two different url_prefixes
+Two flask login systems in two different subdomain
